@@ -3,14 +3,14 @@ package br.com.multitrek.contatos.service
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class MockApiClient {
+class MockApiModule {
 
-    fun clientProvider(): Endpoint {
+    fun clientProvider(): MockApiEndpoint {
         return Retrofit.Builder()
             .baseUrl(URLs.MOCK_API.url)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            .create(Endpoint::class.java)
+            .create(MockApiEndpoint::class.java)
     }
 
 }

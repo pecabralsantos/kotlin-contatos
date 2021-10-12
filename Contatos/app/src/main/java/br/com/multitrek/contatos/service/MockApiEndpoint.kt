@@ -4,9 +4,9 @@ import br.com.multitrek.contatos.model.Contact
 import retrofit2.Call
 import retrofit2.http.GET
 
-interface Endpoint {
+interface MockApiEndpoint {
 
-    @GET("contacts")
-    suspend fun getContactsList(): Call<List<Contact>>
+    @GET("contacts/1")
+    suspend fun getAllContacts(): Call<List<Contact>>
 
 }
