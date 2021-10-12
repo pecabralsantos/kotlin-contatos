@@ -4,9 +4,15 @@ import br.com.multitrek.contatos.model.Contact
 import br.com.multitrek.contatos.service.MockApiModule
 import retrofit2.Call
 
-class ContactRemoteDataSource constructor(
+interface ContactRemoteDataSource {
+    suspend fun getAllContacts(): Call<List<Contact>>
+}
+
+class ContactRemoteDataSourceImpl(
     private val mockApiModule: MockApiModule
-) {
-    suspend fun getAllContacts(): Call<List<Contact>> =
+) : ContactRemoteDataSource {
+
+    override suspend fun getAllContacts(): Call<List<Contact>> =
         mockApiModule.clientProvider().getAllContacts()
+
 }

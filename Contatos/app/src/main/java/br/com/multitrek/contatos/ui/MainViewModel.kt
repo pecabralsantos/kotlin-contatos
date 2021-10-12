@@ -1,8 +1,8 @@
 package br.com.multitrek.contatos.ui
 
 import androidx.lifecycle.ViewModel
-import br.com.multitrek.contatos.repository.ContactRemoteRepository
+import br.com.multitrek.contatos.repository.ContactRepository
 
-class MainViewModel constructor(
-    private val contactRemoteRepository: ContactRemoteRepository
+class MainViewModel(
+    private val contactRepository: ContactRepository
 ) : ViewModel() {}

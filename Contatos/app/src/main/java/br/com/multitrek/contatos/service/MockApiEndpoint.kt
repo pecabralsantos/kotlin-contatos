@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface MockApiEndpoint {
 
-    @GET("contacts/1")
+    @GET("contacts")
     suspend fun getAllContacts(): Call<List<Contact>>
 
 }
